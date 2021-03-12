@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../../utils/utils';
+import { colors, logo } from '../../utils/utils';
 
 const Nav = styled.div`
     position: fixed;
@@ -14,6 +14,10 @@ const Nav = styled.div`
     color: ${colors.dark};
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 2;
+
+    .logo{
+        height: 9vh;
+    }
 `
 const Hamburger = styled.div`
     width: 50px;
@@ -96,7 +100,7 @@ const Navigation = () => {
     }
     return (
         <Nav>
-            <h1>Logo</h1>
+            <a href="/"><img src={logo} alt="logo" className="logo" /></a>
             <Hamburger className="hamburger" onClick={handleClick}>
                 <div className="line"></div>
                 <div className="line"></div>

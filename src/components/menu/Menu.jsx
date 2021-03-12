@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import styled from 'styled-components';
 import { colors, shadows } from '../../utils/utils';
+import Content from "../content";
 
 const MenuContainer = styled.div`
     height: 50vh;
@@ -28,20 +30,33 @@ const MenuContainer = styled.div`
             list-style: none;
             font-size: 2em;
             text-align: center;
-        } 
+            height: 25%;
+            line-height: 12vh;
+            box-shadow: ${shadows.main_shadow};
+        }
     }
 `
 
 const Menu = () => {
     return (
-        <MenuContainer className="menu">
-            <ul>
-                <li>O KANCELARII</li>
-                <li>AKTUALNOŚCI</li>
-                <li>ZESPÓŁ</li>
-                <li>KONTAKT</li>
-            </ul>
-        </MenuContainer>
+        <Router>
+            <MenuContainer className="menu">
+                <ul>
+                    <li><Link to="/">O KANCELARII</Link></li>
+                    <li><Link to="/news">AKTUALNOŚCI</Link></li>
+                    <li><Link to="/team">ZESPÓŁ</Link></li>
+                    <li><Link to="/contact">KONTAKT</Link></li>
+                </ul>
+            </MenuContainer>
+            <Switch>
+                <Route exact path="/">
+                    <Content />
+                </Route>
+                <Route path="/news">news</Route>
+                <Route path="/team">team</Route>
+                <Route path="/contact">contact</Route>
+            </Switch>
+        </Router>
     );
 }
 

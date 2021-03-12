@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+a{
+    color: #060606d6;
+    text-decoration: none;
+}
 .active {
     top: 10vh !important;
     opacity: 0.85;
