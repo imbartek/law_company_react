@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import { colors, images, photos } from '../../utils/utils';
+import { colors, photos } from '../../utils/utils';
 import Home from '../homepage';
 import ContactForm from '../form';
 
@@ -10,6 +10,7 @@ const Container = styled.div`
     background-color: ${colors.background};
     position: relative;
     top: 10vh;
+    min-height: 100vh;
     padding: 5% 10% 10% 10%;
     display: flex;
     flex-flow: column;
@@ -23,11 +24,11 @@ const Container = styled.div`
     }
     @media (min-width: 768px){
         .alice-carousel__wrapper{
-        text-align: center;
+            text-align: center;
         img{
             width: 30%;
+            }
         }
-    }
     }
 `
 

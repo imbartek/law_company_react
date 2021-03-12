@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import styled from 'styled-components';
 import { colors, shadows } from '../../utils/utils';
 import Content from "../content";
+import News from '../news/News';
 
 const MenuContainer = styled.div`
     height: 50vh;
@@ -52,7 +53,9 @@ const Menu = () => {
                 <Route exact path="/">
                     <Content />
                 </Route>
-                <Route path="/news">news</Route>
+                <Route path="/news">
+                    <News/>
+                </Route>
                 <Route path="/team">team</Route>
                 <Route path="/contact">contact</Route>
             </Switch>
