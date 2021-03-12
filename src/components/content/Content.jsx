@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import { colors, images } from '../../utils/utils';
+import { colors, images, photos } from '../../utils/utils';
 import Home from '../homepage';
 import ContactForm from '../form';
 
@@ -17,7 +17,6 @@ const Container = styled.div`
 
     .alice-carousel__wrapper{
         text-align: center;
-        
         img{
             width: 100%;
         }
@@ -25,7 +24,6 @@ const Container = styled.div`
     @media (min-width: 768px){
         .alice-carousel__wrapper{
         text-align: center;
-        
         img{
             width: 30%;
         }
@@ -36,7 +34,7 @@ const Container = styled.div`
 const responsive = {
     0: { items: 1 },
 };
-const items = images.map((item, index) => {
+const items = photos.map((item, index) => {
     return <img src={item} alt="img" />;
 });
 const Content = () => {
@@ -45,9 +43,8 @@ const Content = () => {
             <AliceCarousel
                 autoPlay
                 animationDuration={1000}
-                autoPlayInterval={1000}
+                autoPlayInterval={2000}
                 animationType='fadeout'
-                autoHeight
                 infinite
                 mouseTracking
                 items={items}
