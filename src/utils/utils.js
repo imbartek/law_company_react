@@ -21,6 +21,8 @@ export const photos = [
     '/compressjpeg/DSA_5022-min.jpg',
     '/compressjpeg/DSA_5039-min.jpg',
     '/compressjpeg/DSA_5047-min.jpg',
+    '/compressjpeg/DSA_5068-min.jpg',
+    '/compressjpeg/DSA_5070-min.jpg',
 ]
 
 export const logo = '/img/logo.png';

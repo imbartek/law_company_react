@@ -94,7 +94,6 @@ const Hamburger = styled.div`
 const Navigation = () => {
 
     const handleClick = () => {
-        const hamburger = document.querySelector('.hamburger');
         const menu = document.querySelector('.menu');
         menu.classList.toggle('active');
     }

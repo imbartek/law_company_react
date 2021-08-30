@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { colors, shadows } from '../../utils/utils';
 import Content from "../content";
 import News from '../news/News';
+import Team from '../team/Team';
 
 const MenuContainer = styled.div`
     height: 50vh;
@@ -39,25 +40,27 @@ const MenuContainer = styled.div`
 `
 
 const Menu = () => {
+
+    const closeMenu = () => {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('active');
+    }
+
     return (
         <Router>
             <MenuContainer className="menu">
                 <ul>
-                    <li><Link to="/">O KANCELARII</Link></li>
-                    <li><Link to="/news">AKTUALNOŚCI</Link></li>
-                    <li><Link to="/team">ZESPÓŁ</Link></li>
-                    <li><Link to="/contact">KONTAKT</Link></li>
+                    <li><Link to="/" onClick={closeMenu}>O KANCELARII</Link></li>
+                    <li><Link to="/news" onClick={closeMenu}>AKTUALNOŚCI</Link></li>
+                    <li><Link to="/team" onClick={closeMenu}>ZESPÓŁ</Link></li>
+                    <li><Link to="/contact" onClick={closeMenu}>KONTAKT</Link></li>
                 </ul>
             </MenuContainer>
             <Switch>
-                <Route exact path="/">
-                    <Content />
-                </Route>
-                <Route path="/news">
-                    <News/>
-                </Route>
-                <Route path="/team">team</Route>
-                <Route path="/contact">contact</Route>
+                <Route exact path="/" component={Content}/>
+                <Route path="/news" component={News}/>
+                <Route path="/team" component={Team}/>
+                <Route path="/contact"/>
             </Switch>
         </Router>
     );

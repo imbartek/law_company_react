@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import { colors } from '../../utils/utils';
 
@@ -10,7 +10,7 @@ const About = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 2fr;
     margin-bottom: 5%
-    
+
     & header{
         margin-bottom: 5%;
     }
@@ -26,6 +26,11 @@ const About = styled.div`
 `
 
 const HomePage = () => {
+
+    useEffect( () => {
+        window.scrollTo(0, 0);
+    })
+
     return (
         <About>
             <section>
